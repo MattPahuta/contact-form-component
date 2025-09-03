@@ -1,1 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap");
 @import 'tailwindcss';
+
+@theme {
+  --clr-brand-grey-900: #2a4144;
+  --clr-brand-grey-500: #86a2a5;
+  --clr-brand-green-600: #0c7d69;
+  --clr-brand-green-200: #e0f1e8;
+  /* red-500 */
+  --clr-brand-alert: #d73c3c;
+  --font-karla: "Karla", sans-serif;
+  --text-heading: 2rem;
+}
+
+body {
+  @apply bg-clr-brand-green-200;
+}
