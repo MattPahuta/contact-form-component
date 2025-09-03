@@ -1,13 +1,15 @@
 
+import ContactForm from "./components/ContactForm";
+
 function App() {
 
 
   return (
     // app wrapper
-    <div className="font-karla max-w-3xl mx-auto mt-10">
-      <h1 className="text-heading">Contact Us</h1>
+    <div className="max-w-3xl mx-auto font-karla text-brand-grey-900">
+      <ContactForm />
     </div>
-  )
+  );
 }
 
 export default App
