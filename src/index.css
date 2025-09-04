@@ -2,12 +2,12 @@
 @import 'tailwindcss';
 
 @theme {
-  --color-brand-grey-900: #2a4144;
-  --color-brand-grey-500: #86a2a5;
-  --color-brand-green-600: #0c7d69;
-  --color-brand-green-200: #e0f1e8;
+  --color-brand-grey-900: hsl(187, 24%, 22%);
+  --color-brand-grey-500: hsl(186, 15%, 59%);
+  --color-brand-green-600: hsl(169, 82%, 27%);
+  --color-brand-green-200: hsl(148, 38%, 91%);
   /* red-500 */
-  --clr-brand-alert: #d73c3c;
+  --clr-brand-alert: hsl(0, 66%, 54%);
   --font-karla: "Karla", sans-serif;
   --text-heading: 2rem;
 }

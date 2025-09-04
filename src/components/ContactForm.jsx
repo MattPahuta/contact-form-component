@@ -1,3 +1,5 @@
+import RadioFieldset from "./inputs/RadioFieldset";
+
 function ContactForm() {
   return (
     <div className="my-8 mx-4 p-6 rounded-2xl bg-white">
@@ -10,7 +12,7 @@ function ContactForm() {
           <input
             id="firstName"
             type="text"
-            className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-brand-grey-900 outline-1 -outline-offset-1 outline-brand-grey-500 focus:outline-2 focus:-outline-offset-2 focus:outline-brand-green-600"
+            className="block w-full rounded-lg bg-white px-3 py-1.5 text-base text-brand-grey-900 outline-1 -outline-offset-1 outline-brand-grey-500 focus:outline-2 focus:-outline-offset-2 focus:outline-brand-green-600"
           />
         </div>
 
@@ -21,7 +23,7 @@ function ContactForm() {
           <input
             id="lastName"
             type="text"
-            className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-brand-grey-900 outline-1 -outline-offset-1 outline-brand-grey-500 focus:outline-2 focus:-outline-offset-2 focus:outline-brand-green-600"
+            className="block w-full rounded-lg bg-white px-3 py-1.5 text-base text-brand-grey-900 outline-1 -outline-offset-1 outline-brand-grey-500 focus:outline-2 focus:-outline-offset-2 focus:outline-brand-grey-500"
           />
         </div>
 
@@ -32,43 +34,12 @@ function ContactForm() {
           <input
             id="email"
             type="email"
-            className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-brand-grey-900 outline-1 -outline-offset-1 outline-brand-grey-500 focus:outline-2 focus:-outline-offset-2 focus:outline-brand-green-600"
+            className="block w-full rounded-lg bg-white px-3 py-1.5 text-base text-brand-grey-900 outline-1 -outline-offset-1 outline-brand-grey-500 focus:outline-2 focus:-outline-offset-2 focus:outline-brand-green-600"
           />
         </div>
 
-        <fieldset className="sm:col-span-2">
-          <legend className="space-y-2 block text-base">
-            Query Type
-          </legend>
+        <RadioFieldset />
 
-          <div className="mt-4 grid gap-2">
-            <div className="flex items-center gap-2 pl-4 py-3.5 outline-1 -outline-offset-1 outline-brand-grey-500 focus:outline-2 focus:-outline-offset-2 focus:outline-brand-green-600 rounded-md">
-              <input
-                id="general"
-                type="radio"
-                name="query-type"
-                value="general"
-                className="h-4 w-4 accent-brand-green-600"
-              />
-              <label htmlFor="general" className="block text-base">
-                General Enquiry
-              </label>
-            </div>
-
-            <div className="flex items-center gap-2 pl-4  py-3.5 outline-1 -outline-offset-1 outline-brand-grey-500 focus:outline-2 focus:-outline-offset-2 focus:outline-brand-green-600 rounded-md">
-              <input
-                id="support"
-                type="radio"
-                name="query-type"
-                value="support"
-                className="h-4 w-4 accent-brand-green-600"
-              />
-              <label htmlFor="support" className="block text-base">
-                Support Request
-              </label>
-            </div>
-          </div>
-        </fieldset>
 
         <div className="space-y-2 sm:col-span-2">
           <label htmlFor="message" className="block text-base">
