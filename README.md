@@ -81,7 +81,9 @@ Use this section to outline areas that you want to continue focusing on in futur
 ### Useful resources
 
 - [Form Styling Essentials](https://www.youtube.com/watch?v=nuDpLN2dazU&t=43s) - Another great resource from Kevin Powell on using modern CSS to style a form. I used TailwindCSS for my styling, but this video was still hugely instructive on approaching a styling strategy.
+- []() - Yet another Kevin Powell video tutorial where he is actually coding this exact challenge. I found this after I'd started the project and decided I was going to use Tailwind for my styling, so I definitely diverge in some areas. 
 - [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+- [Tailwindcss docs](https://tailwindcss.com/docs/hover-focus-and-other-states#has)The official Tailwind docs have a use case example for the `:has()` selector that is pretty much perfect for styling the radio inputs for this project.
 
 
 ## Author

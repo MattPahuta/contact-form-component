@@ -22,7 +22,7 @@ function ContactForm() {
   }
 
   return (
-    <form className="grid gap-6 sm:grid-cols-2">
+    <form className="grid gap-6 accent-brand-green-600 sm:grid-cols-2">
       <Input
         label="First Name"
         type="text"
