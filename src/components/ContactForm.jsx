@@ -28,7 +28,6 @@ function ContactForm() {
         label="First Name"
         type="text"
         name="firstName"
-        id="firstName"
         value={formData.firstName}
         onChange={handleChange}
         required
@@ -37,7 +36,6 @@ function ContactForm() {
         label="Last Name"
         type="text"
         name="lastName"
-        id="lastName"
         value={formData.lastName}
         onChange={handleChange}
         required
@@ -46,7 +44,6 @@ function ContactForm() {
         label="Email Address"
         type="email"
         name="email"
-        id="email"
         value={formData.email}
         onChange={handleChange}
         required
@@ -54,6 +51,13 @@ function ContactForm() {
       />
       <RadioFieldset legend="Query Type" onChange={handleChange} />
       <TextareaInput label="Message" name="message" value={formData.message} onChange={handleChange} required />
+      <CheckboxInput 
+        label="I consent to being contacted by the team" 
+        name="consent" 
+        value={formData.hasConsent} 
+        onChange={handleChange} 
+        required 
+      />
       <button className="py-3.5 col-span-full bg-brand-green-600 text-white font-semibold rounded-lg cursor-pointer">Submit</button>
     </form>
   );

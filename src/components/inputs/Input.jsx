@@ -5,7 +5,6 @@ function Input({
   label,
   type,
   name,
-  id,
   value,
   onChange,
   required = false,
@@ -18,7 +17,7 @@ function Input({
 
   return (
     <div className={formGroupClassNames}>
-      <label htmlFor="firstName" className="flex text-base">
+      <label htmlFor={name} className="flex text-base">
         {label}
         {required && (
           <FaAsterisk
@@ -29,13 +28,13 @@ function Input({
         )}
       </label>
       <input
-        id={id}
+        id={name}
         name={name}
         type={type}
         value={value}
         onChange={onChange}
         required={required}
-        className="block w-full rounded-lg bg-white px-4 py-3.5 text-base outline-1 -outline-offset-1 outline-brand-grey-500 focus:-outline-2 focus:-outline-offset-2 focus:outline-brand-green-600 focus:ring-2 focus:ring-brand-green-600/40"
+        className="block w-full cursor-pointer rounded-lg bg-white px-4 py-3.5 text-base outline-1 -outline-offset-1 outline-brand-grey-500 focus:-outline-2 focus:-outline-offset-2 focus:outline-brand-green-600 focus:ring-2 focus:ring-brand-green-600/40"
       />
     </div>
   );
