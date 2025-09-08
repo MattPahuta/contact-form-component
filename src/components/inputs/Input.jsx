@@ -21,7 +21,11 @@ function Input({
       <label htmlFor="firstName" className="flex text-base">
         {label}
         {required && (
-          <FaAsterisk aria-focusable="false" className="size-1.5 m-1 fill-brand-green-600 inline-block" />
+          <FaAsterisk
+            focusable="false"
+            aria-hidden="true"
+            className="size-1.5 m-1 fill-brand-green-600 inline-block"
+          />
         )}
       </label>
       <input
@@ -31,7 +35,7 @@ function Input({
         value={value}
         onChange={onChange}
         required={required}
-        className="block w-full rounded-lg bg-white px-4 py-3.5 text-base text-brand-grey-900 outline-1 -outline-offset-1 outline-brand-grey-500 focus:outline-2 focus:-outline-offset-2 focus:outline-brand-green-600"
+        className="block w-full rounded-lg bg-white px-4 py-3.5 text-base outline-1 -outline-offset-1 outline-brand-grey-500 focus:-outline-2 focus:-outline-offset-2 focus:outline-brand-green-600 focus:ring-2 focus:ring-brand-green-600/40"
       />
     </div>
   );

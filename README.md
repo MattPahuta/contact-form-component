@@ -63,15 +63,24 @@ To see how you can add code snippets, see below:
 ```html
 <h1>Some HTML code I'm proud of</h1>
 ```
+
+
 ```css
 .proud-of-this-css {
   color: papayawhip;
 }
 ```
+  The focus styles in the design comp felt a little too subtle to me so I add added a ring effect to make the focused input more obvious.
 ```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
+  <input
+    id={id}
+    name={name}
+    type={type}
+    value={value}
+    onChange={onChange}
+    required={required}
+    className="block w-full rounded-lg bg-white px-4 py-3.5 text-base outline-1 -outline-offset-1 outline-brand-grey-500 focus:-outline-2 focus:-outline-offset-2 focus:outline-brand-green-600 focus:ring-2 focus:ring-brand-green-600/40"
+  />
 ```
 
 ### Continued development

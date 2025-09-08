@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Input from "./inputs/Input";
 import RadioFieldset from "./inputs/RadioFieldset";
+import TextareaInput from "./inputs/TextareaInput";
 import CheckboxInput from "./inputs/CheckboxInput";
 
 function ContactForm() {
@@ -51,20 +52,8 @@ function ContactForm() {
         required
         colSpanFull
       />
-      <RadioFieldset />
-
-      <div className="space-y-2 sm:col-span-full">
-        <label htmlFor="message" className="block text-base">
-          Message
-        </label>
-        <textarea
-          name="message"
-          id="message"
-          className="w-full border border-brand-grey-500 rounded-lg"></textarea>
-      </div>
-
-
-
+      <RadioFieldset legend="Query Type" onChange={handleChange} />
+      <TextareaInput label="Message" name="message" value={formData.message} onChange={handleChange} required />
       <button className="py-3.5 col-span-full bg-brand-green-600 text-white font-semibold rounded-lg cursor-pointer">Submit</button>
     </form>
   );
