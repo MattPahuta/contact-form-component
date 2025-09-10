@@ -50,15 +50,23 @@ function ContactForm() {
         colSpanFull
       />
       <RadioFieldset legend="Query Type" onChange={handleChange} />
-      <TextareaInput label="Message" name="message" value={formData.message} onChange={handleChange} required />
-      <CheckboxInput 
-        label="I consent to being contacted by the team" 
-        name="consent" 
-        value={formData.hasConsent} 
-        onChange={handleChange} 
-        required 
+      <TextareaInput
+        label="Message"
+        name="message"
+        value={formData.message}
+        onChange={handleChange}
+        required
       />
-      <button className="py-3.5 col-span-full bg-brand-green-600 text-white font-semibold rounded-lg cursor-pointer">Submit</button>
+      <CheckboxInput
+        label="I consent to being contacted by the team"
+        name="consent"
+        value={formData.hasConsent}
+        onChange={handleChange}
+        required
+      />
+      <button className="py-3.5 col-span-full bg-brand-green-600 text-white font-bold rounded-lg cursor-pointer hover:bg-brand-green-900 transition">
+        Submit
+      </button>
     </form>
   );
 }

@@ -19,7 +19,7 @@ function TextareaInput({label, name, value, onChange, required = false}) {
         id={name}
         onChange={onChange}
         required={required}
-        className="block w-full cursor-pointer min-h-36 sm:min-h-28 rounded-lg bg-white px-4 py-3.5 text-base sm:text-lg outline-1 -outline-offset-1 outline-brand-grey-500 focus:-outline-2 focus:-outline-offset-2 focus:outline-brand-green-600 focus:ring-2 focus:ring-brand-green-600/40"></textarea>
+        className="block cursor-pointer box-content h-[3lh] resize-y rounded-lg bg-white px-4 py-3.5 text-base sm:text-lg outline-1 -outline-offset-1 outline-brand-grey-500  focus:-outline-2 focus:-outline-offset-2 hover:outline-2 hover:outline-brand-green-600 focus:outline-brand-green-600 focus:ring-2 focus:ring-brand-green-600/40"></textarea>
     </div>
   );
 }

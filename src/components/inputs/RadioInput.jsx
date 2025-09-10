@@ -1,6 +1,6 @@
 function RadioInput({label, name, value, onChange, required = false}) {
   return (
-    <label className="flex items-center gap-5 rounded-lg bg-white px-4 py-3.5 cursor-pointer outline-1 -outline-offset-1 outline-brand-grey-500 has-checked:bg-brand-green-200 has-checked:outline-brand-green-600 has-focus:-outline-2 has-focus:-outline-offset-2 has-focus:outline-brand-green-600 has-focus:ring-2 has-focus:ring-brand-green-600/40">
+    <label className="flex items-center gap-5 rounded-lg bg-white px-4 py-3.5 cursor-pointer outline-1 -outline-offset-1 outline-brand-grey-500 has-checked:bg-brand-green-200 has-checked:outline-brand-green-600 has-focus:-outline-2 has-focus:-outline-offset-2 has-focus:outline-brand-green-600 has-focus:ring-2 has-focus:ring-brand-green-600/40 hover:outline-2 hover:outline-brand-green-600">
       <input
         type="radio"
         name={name}
