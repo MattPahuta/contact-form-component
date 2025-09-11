@@ -12,18 +12,24 @@ function ContactForm() {
     email: '',
     query: '',
     message: '',
-    hasConsent: false
+    consent: false
   })
 
   function handleChange(e) {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    })
+    const { name, value, type, checked } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: type === "checkbox" ? checked : value,
+    }));
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    console.log("form submitted:", formData)
   }
 
   return (
-    <form className="grid gap-6 accent-brand-green-600 sm:grid-cols-2">
+    <form onSubmit={handleSubmit} className="grid gap-6 accent-brand-green-600 sm:grid-cols-2">
       <Input
         label="First Name"
         type="text"
@@ -59,12 +65,13 @@ function ContactForm() {
       />
       <CheckboxInput
         label="I consent to being contacted by the team"
+        id="consent"
         name="consent"
-        value={formData.hasConsent}
+        checked={formData.consent}
         onChange={handleChange}
         required
       />
-      <button className="py-3.5 col-span-full bg-brand-green-600 text-white font-bold rounded-lg cursor-pointer hover:bg-brand-green-900 transition">
+      <button type="submit" className="py-3.5 col-span-full bg-brand-green-600 text-white font-bold rounded-lg cursor-pointer hover:bg-brand-green-900 transition focus-visible:bg-brand-green-900 focus-visible:outline-2 focus-visible:outline-brand-green-600/40 focus-visible:outline-offset-1">
         Submit
       </button>
     </form>

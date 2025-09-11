@@ -1,9 +1,12 @@
 import { FaAsterisk } from 'react-icons/fa';
 
+// size-5 focus-visible:outline-2 outline-offset-1 outline-brand-green-600/40
+
 function CheckboxInput({
   label,
+  id,
   name,
-  value,
+  checked,
   onChange,
   required = false,
 }) {
@@ -11,15 +14,15 @@ function CheckboxInput({
     <div className="flex items-center gap-4 sm:col-span-full">
       <input
         type="checkbox"
+        id={id}
         name={name}
-        value={value}
+        checked={checked}
         onChange={onChange}
-        id={name}
         required={required}
-        className="size-5"
+        className="size-5 focus-visible:outline-2 outline-offset-1 outline-brand-green-600/40"
       />
       <label
-        htmlFor={name}
+        htmlFor={id}
         className="w-full flex text-base cursor-pointer">
         {label}
         {required && (
