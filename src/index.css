@@ -7,8 +7,7 @@
   --color-brand-green-600: hsl(169, 82%, 27%);
   --color-brand-green-900: hsl(169, 95%, 16%);
   --color-brand-green-200: hsl(148, 38%, 91%);
-  /* red-500 */
-  --clr-brand-alert: hsl(0, 66%, 54%);
+  --color-brand-alert: hsl(0, 66%, 54%);
   --font-karla: "Karla", sans-serif;
   --text-heading: 2rem;
 }

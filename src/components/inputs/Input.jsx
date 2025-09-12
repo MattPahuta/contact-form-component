@@ -4,12 +4,16 @@ import { clsx } from 'clsx';
 function Input({
   label,
   type,
+  id,
   name,
   value,
   onChange,
   required = false,
+  error,
   colSpanFull
 }) {
+
+  const errorId = `${id}-error`;
 
   const formGroupClassNames = clsx('grid space-y-2', {
     'sm:col-span-full': colSpanFull
@@ -34,10 +38,23 @@ function Input({
         value={value}
         onChange={onChange}
         required={required}
+        aria-invalid={!!error}
+        aria-describedby={error ? errorId : undefined}
         className="block w-full cursor-pointer rounded-lg bg-white px-4 py-3.5 text-base outline-1 -outline-offset-1 outline-brand-grey-500 focus:-outline-2 focus:-outline-offset-2 focus:outline-brand-green-600 focus:ring-2 focus:ring-brand-green-600/40 hover:outline-2 hover:outline-brand-green-600"
       />
+      {error && (
+        <span id={errorId} className="text-brand-alert">
+          {error}
+        </span>
+      )}
     </div>
   );
 }
+/* 
+
+<label for="email">Email</label>
+<input type="email" id="email" name="email" autocomplete="email" aria-invalid="true" aria-describedby="email-error">
+<span id="email-error" class="error-message">Please enter a valid email address.</span>
+*/
 
 export default Input;
