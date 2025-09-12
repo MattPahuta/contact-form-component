@@ -20,7 +20,9 @@ function TextareaInput({label, id, name, value, onChange, error}) {
         onChange={onChange}
         aria-invalid={!!error}
         aria-describedby={error ? errorId : undefined}
-        className="block cursor-pointer box-content h-[3lh] resize-y rounded-lg bg-white px-4 py-3.5 text-base sm:text-lg outline-1 -outline-offset-1 outline-brand-grey-500  focus:-outline-2 focus:-outline-offset-2 hover:outline-2 hover:outline-brand-green-600 focus:outline-brand-green-600 focus:ring-2 focus:ring-brand-green-600/40"></textarea>
+        className={`block cursor-pointer box-content h-[3lh] resize-y rounded-lg bg-white px-4 py-3.5 text-base sm:text-lg outline-1 -outline-offset-1  focus:-outline-2 focus:-outline-offset-2 hover:outline-2 hover:outline-brand-green-600 focus:outline-brand-green-600 focus:ring-2 focus:ring-brand-green-600/40 ${
+          error ? 'outline-brand-alert' : 'outline-brand-grey-500'
+        }`}></textarea>
       {error && (
         <span id={errorId} className="text-brand-alert">
           {error}
