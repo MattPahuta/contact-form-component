@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Input from "./inputs/Input";
-import RadioFieldset from "./inputs/RadioFieldset";
+import RadioGroup from "./inputs/RadioGroup";
 import TextareaInput from "./inputs/TextareaInput";
 import CheckboxInput from "./inputs/CheckboxInput";
 
@@ -10,7 +10,7 @@ function ContactForm() {
     firstName: '',
     lastName: '',
     email: '',
-    query: '',
+    queryType: '',
     message: '',
     consent: false
   });
@@ -35,7 +35,7 @@ function ContactForm() {
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
       newErrors.email = "Please enter a valid email address";
     }
-    if (!formData.query) newErrors.query = "Please select a query type";
+    if (!formData.queryType) newErrors.queryType = "Please select a query type";
     if (!formData.message) newErrors.message = "This field is required";
     if (!formData.consent) newErrors.consent = "To submit this form, please consent to being contacted";
     return newErrors;
@@ -61,7 +61,6 @@ function ContactForm() {
         value={formData.firstName}
         onChange={handleChange}
         error={errors.firstName}
-        required
       />
       <Input
         label="Last Name"
@@ -71,7 +70,6 @@ function ContactForm() {
         value={formData.lastName}
         onChange={handleChange}
         error={errors.lastName}
-        required
       />
       <Input
         label="Email Address"
@@ -81,10 +79,19 @@ function ContactForm() {
         value={formData.email}
         onChange={handleChange}
         error={errors.email}
-        required
         colSpanFull
       />
-      <RadioFieldset legend="Query Type" id="query" onChange={handleChange} error={errors.query} />
+      <RadioGroup 
+        legend="Query Type" 
+        name="queryType" 
+        options={[ 
+          {value: "general", label: "General Enquiry"}, 
+          {value: "support", label: "Support Request"}
+        ]} 
+        value={formData.queryType} 
+        onChange={handleChange} 
+        error={errors.queryType} 
+      />
       <TextareaInput
         label="Message"
         id="message"
@@ -92,7 +99,6 @@ function ContactForm() {
         value={formData.message}
         onChange={handleChange}
         error={errors.message}
-        required
       />
       <CheckboxInput
         label="I consent to being contacted by the team"
@@ -101,7 +107,6 @@ function ContactForm() {
         checked={formData.consent}
         onChange={handleChange}
         error={errors.consent}
-        required
       />
       <button type="submit" className="py-3.5 col-span-full bg-brand-green-600 text-white font-bold rounded-lg cursor-pointer hover:bg-brand-green-900 transition focus-visible:bg-brand-green-900 focus-visible:outline-2 focus-visible:outline-brand-green-600/40 focus-visible:outline-offset-1">
         Submit

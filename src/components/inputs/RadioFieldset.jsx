@@ -19,14 +19,12 @@ function RadioFieldset({legend, id, error, onChange}) {
           name="query"
           value="general"
           onChange={onChange}
-          required
         />
         <RadioInput
           label="Support Request"
           name="query"
           value="support"
           onChange={onChange}
-          required
         />
       </div>
       {error && (

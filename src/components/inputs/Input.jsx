@@ -8,7 +8,6 @@ function Input({
   name,
   value,
   onChange,
-  required = false,
   error,
   colSpanFull
 }) {
@@ -23,13 +22,11 @@ function Input({
     <div className={formGroupClassNames}>
       <label htmlFor={name} className="flex text-base">
         {label}
-        {required && (
-          <FaAsterisk
-            focusable="false"
-            aria-hidden="true"
-            className="size-1.5 m-1 fill-brand-green-600 inline-block"
-          />
-        )}
+        <FaAsterisk
+          focusable="false"
+          aria-hidden="true"
+          className="size-1.5 m-1 fill-brand-green-600 inline-block"
+        />
       </label>
       <input
         id={name}
@@ -37,7 +34,6 @@ function Input({
         type={type}
         value={value}
         onChange={onChange}
-        required={required}
         aria-invalid={!!error}
         aria-describedby={error ? errorId : undefined}
         className="block w-full cursor-pointer rounded-lg bg-white px-4 py-3.5 text-base outline-1 -outline-offset-1 outline-brand-grey-500 focus:-outline-2 focus:-outline-offset-2 focus:outline-brand-green-600 focus:ring-2 focus:ring-brand-green-600/40 hover:outline-2 hover:outline-brand-green-600"
@@ -50,11 +46,5 @@ function Input({
     </div>
   );
 }
-/* 
-
-<label for="email">Email</label>
-<input type="email" id="email" name="email" autocomplete="email" aria-invalid="true" aria-describedby="email-error">
-<span id="email-error" class="error-message">Please enter a valid email address.</span>
-*/
 
 export default Input;
