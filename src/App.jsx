@@ -1,4 +1,3 @@
-
 import ContactForm from "./components/ContactForm";
 
 // className="my-8 mx-4 p-6 rounded-2xl bg-white"
