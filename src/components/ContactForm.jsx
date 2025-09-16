@@ -133,20 +133,12 @@ function ContactForm() {
       </form>
       {/* {showModal && (
         <Confirmation onClose={() => setShowModal(false)} />
-      )}
-      */}
+      )} */}
+
+     
 
       {showModal && (
-        <ModalDialog isOpen={showModal}>
-          Hello there!
-          <br />
-          <button
-            onClick={() => {
-              setShowModal(false);
-            }}>
-            Close
-          </button>
-        </ModalDialog>
+        <ModalDialog isOpen={showModal} />
       )}
     </>
   );
