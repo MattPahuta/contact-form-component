@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 
 // bg-brand-grey-900 text-white rounded-xl p-4 mt-6
+// This modal follows the FE Masters Tailwind example 
 
 function Confirmation({ onClose }) {
 
