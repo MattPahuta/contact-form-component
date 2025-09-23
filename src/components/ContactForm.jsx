@@ -3,7 +3,6 @@ import Input from "./inputs/Input";
 import RadioGroup from "./inputs/RadioGroup";
 import TextareaInput from "./inputs/TextareaInput";
 import CheckboxInput from "./inputs/CheckboxInput";
-import Confirmation from "./Confirmation";
 import ModalDialog from "./ModalDialog";
 
 function ContactForm() {
@@ -131,14 +130,8 @@ function ContactForm() {
           Submit
         </button>
       </form>
-      {/* {showModal && (
-        <Confirmation onClose={() => setShowModal(false)} />
-      )} */}
-
-     
-
       {showModal && (
-        <ModalDialog isOpen={showModal} />
+        <ModalDialog onClose={() => setShowModal(false)} />
       )}
     </>
   );

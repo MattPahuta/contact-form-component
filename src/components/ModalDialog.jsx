@@ -1,22 +1,29 @@
 import { useEffect, useRef } from 'react';
 
-export default function ModalDialog({ isOpen }) {
-  const ref = useRef();
+function ModalDialog({ onClose }) {
+  const dialogRef = useRef(null);
 
   useEffect(() => {
-    if (!isOpen) {
-      return;
+    if (dialogRef.current) {
+      dialogRef.current.showModal();
     }
-    const dialog = ref.current;
-    dialog.showModal();
-    return () => {
-      dialog.close();
+
+    const handleClose = () => {
+      onClose();
     };
-  }, [isOpen]);
+
+    const dialogEl = dialogRef.current;
+    dialogEl.addEventListener("close", handleClose);
+
+    return () => {
+      dialogEl.removeEventListener("close", handleClose);
+    };
+
+  }, [onClose]);
 
   return (
     <dialog
-      ref={ref}
+      ref={dialogRef}
       className="animate-in fade-in zoom-in backdrop:animate-in backdrop:fade-in m-auto w-auto h-fit max-w-md p-0 rounded-lg shadow-lg backdrop:bg-black/50 backdrop:backdrop-blur-sm backdrop:duration-300 starting:scale-95 backdrop:starting:opacity-0">
       <div className="flex flex-col py-6 px-5 bg-brand-grey-900 text-white">
         <header className="flex items-center justify-between mb-4">
@@ -37,7 +44,7 @@ export default function ModalDialog({ isOpen }) {
             </svg>
             Message Sent!
           </h2>
-          <button className="flex h-6 w-6 items-center justify-center rounded-md cursor-pointer text-brand-green-200 hover:bg-brand-green-200 hover:text-brand-grey-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-500">
+          <button onClick={onClose} className="flex h-6 w-6 justify-center rounded-md cursor-pointer text-brand-green-200 hover:bg-brand-green-200 hover:text-brand-grey-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-green-200" autoFocus>
             <span className="text-xl leading-none" aria-hidden="true">
               x
             </span>
@@ -52,5 +59,6 @@ export default function ModalDialog({ isOpen }) {
       </div>
     </dialog>
   );
-    
 }
+
+export default ModalDialog;
