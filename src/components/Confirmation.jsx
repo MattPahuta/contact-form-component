@@ -31,7 +31,7 @@ function Confirmation({ onClose }) {
           <h2 className="text-lg font-semibold text-brand-grey-900">
             Message Sent!
           </h2>
-          <button className="flex h-8 w-8 items-center justify-center rounded-md p-1 text-slate-400 hover:bg-slate-100 hover:text-slate-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-500">
+          <button className="flex h-8 w-8 items-center justify-center rounded-md p-1 text-slate-400 hover:bg-slate-100 hover:text-slate-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-500 cursor-pointer">
             <span className="text-xl leading-none" aria-hidden="true">x</span>
             <span className="sr-only">Close modal</span>
           </button>
