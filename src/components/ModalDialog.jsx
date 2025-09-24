@@ -1,5 +1,7 @@
 import { useEffect, useRef } from 'react';
 
+// m-auto w-auto h-fit
+
 function ModalDialog({ onClose }) {
   const dialogRef = useRef(null);
 
@@ -24,7 +26,7 @@ function ModalDialog({ onClose }) {
   return (
     <dialog
       ref={dialogRef}
-      className="animate-in fade-in zoom-in backdrop:animate-in backdrop:fade-in m-auto w-auto h-fit max-w-md p-0 rounded-lg shadow-lg backdrop:bg-black/50 backdrop:backdrop-blur-sm backdrop:duration-300 starting:scale-95 backdrop:starting:opacity-0">
+      className="animate-in fade-in zoom-in backdrop:animate-in backdrop:fade-in mx-auto my-6 w-auto h-fit max-w-md p-0 rounded-lg shadow-lg backdrop:bg-black/50 backdrop:backdrop-blur-sm backdrop:duration-300 starting:scale-95 backdrop:starting:opacity-0">
       <div className="flex flex-col py-6 px-5 bg-brand-grey-900 text-white">
         <header className="flex items-center justify-between mb-4">
           <h2 className="flex items-center text-lg font-semibold leading-none">
