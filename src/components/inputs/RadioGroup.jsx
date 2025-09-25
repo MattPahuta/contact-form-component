@@ -41,7 +41,10 @@ function RadioGroup({
         ))}
       </div>
       {error && (
-        <span id={errorId} className="text-brand-alert">
+        <span
+          id={errorId}
+          className="text-brand-alert"
+          aria-live="polite">
           {error}
         </span>
       )}

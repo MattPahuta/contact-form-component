@@ -32,7 +32,10 @@ function TextareaInput({
           error ? 'outline-brand-alert' : 'outline-brand-grey-500'
         }`}></textarea>
       {error && (
-        <span id={errorId} className="text-brand-alert">
+        <span
+          id={errorId}
+          className="text-brand-alert"
+          aria-live="polite">
           {error}
         </span>
       )}

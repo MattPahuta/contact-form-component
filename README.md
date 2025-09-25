@@ -56,30 +56,21 @@ Users should be able to:
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
-
-To see how you can add code snippets, see below:
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
 
 
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-  The focus styles in the design comp felt a little too subtle to me so I add added a ring effect to make the focused input more obvious.
+The focus styles in the design comp felt a little too subtle to me so I add added a ring effect to make the focused input more obvious. The error prop passed to the component allows for a simple solution to applying error state styles along with the rest of the Tailwind classes.
+
 ```js
   <input
-    id={id}
+    id={name}
     name={name}
+    required={required}
     type={type}
     value={value}
     onChange={onChange}
-    required={required}
-    className="block w-full rounded-lg bg-white px-4 py-3.5 text-base outline-1 -outline-offset-1 outline-brand-grey-500 focus:-outline-2 focus:-outline-offset-2 focus:outline-brand-green-600 focus:ring-2 focus:ring-brand-green-600/40"
+    aria-invalid={!!error}
+    aria-describedby={error ? errorId : undefined}
+    className={`block w-full cursor-pointer rounded-lg bg-white px-4 py-3.5 text-base outline-1 -outline-offset-1 focus:-outline-2 focus:-outline-offset-2 focus:outline-brand-green-600 focus:ring-2 focus:ring-brand-green-600/40 hover:outline-2 hover:outline-brand-green-600 ${error ? "outline-brand-alert" : "outline-brand-grey-500" }`}
   />
 ```
 
@@ -91,7 +82,9 @@ Use this section to outline areas that you want to continue focusing on in futur
 
 - [Form Styling Essentials](https://www.youtube.com/watch?v=nuDpLN2dazU&t=43s) - Another great resource from Kevin Powell on using modern CSS to style a form. I used TailwindCSS for my styling, but this video was still hugely instructive on approaching a styling strategy.
 - [Deceptively complex form](https://youtu.be/jJgNgNNHqjk) - Yet another Kevin Powell video tutorial where he is actually coding this exact challenge. I found this after I'd started the project and decided I was going to use Tailwind for my styling, so I definitely diverge in some areas. But it was still helpful, particularly in nailing some of the the trickier layout sizing (particularly the textarea input)
-- [Tailwindcss docs](https://tailwindcss.com/docs/hover-focus-and-other-states#has)The official Tailwind docs have a use case example for the `:has()` selector that is pretty much perfect for styling the radio inputs for this project. There are svg assets for the radio and checkbox selected states, but I opted to style the native inputs as close to the design comp rather than create fully customized visual input states.
+- [How to set custom error messages](https://youtu.be/h5qqmE83Tes) - The follow-up to Kevin's project walkthrough above. This one mainly handles building out the custom error messaging the design comp calls for using JavaScript. Since I used React for my solution, much of this isn't relevant to my project but still well worth the watch, especially if you're using vanilla JS for the challenge.
+- [Tailwindcss docs](https://tailwindcss.com/docs/hover-focus-and-other-states#has) - The official Tailwind docs have a use case example for the `:has()` selector that is pretty much perfect for styling the radio inputs for this project. There are svg assets for the radio and checkbox selected states, but I opted to style the native inputs as close to the design comp rather than create fully customized visual input states.
+- [Frontend Masters Tailwind CSS v2](https://frontendmasters.com/courses/tailwind-css-v2/) - Steve Kinney's latest Tailwind course over at Frontend Masters is excellent. The supplemental course material you get access to is probably worth the cost alone of a month's subscription. In building out my confirmation modal dialog, this content was extremely useful for implementing the Tailwind styles.
 
 
 ## Author

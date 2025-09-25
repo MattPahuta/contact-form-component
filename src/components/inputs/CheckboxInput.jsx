@@ -36,7 +36,10 @@ function CheckboxInput({
         />
       </label>
       {error && (
-        <span id={errorId} className="text-brand-alert col-span-full">
+        <span
+          id={errorId}
+          className="text-brand-alert col-span-full"
+          aria-live="polite">
           {error}
         </span>
       )}
