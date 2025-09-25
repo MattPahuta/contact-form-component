@@ -6,6 +6,7 @@ function Input({
   type,
   id,
   name,
+  required = false,
   value,
   onChange,
   error,
@@ -31,6 +32,7 @@ function Input({
       <input
         id={name}
         name={name}
+        required={required}
         type={type}
         value={value}
         onChange={onChange}

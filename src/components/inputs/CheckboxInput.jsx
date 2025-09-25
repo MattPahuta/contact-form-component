@@ -6,6 +6,7 @@ function CheckboxInput({
   name,
   checked,
   onChange,
+  required = false,
   error,
 }) {
 
@@ -17,6 +18,7 @@ function CheckboxInput({
         type="checkbox"
         id={id}
         name={name}
+        required={required}
         checked={checked}
         onChange={onChange}
         aria-invalid={!!error}

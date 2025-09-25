@@ -67,6 +67,7 @@ function ContactForm() {
   return (
     <>
       <form
+        noValidate
         onSubmit={handleSubmit}
         className="grid gap-6 accent-brand-green-600 sm:grid-cols-2">
         <Input
@@ -74,6 +75,7 @@ function ContactForm() {
           type="text"
           id="firstName"
           name="firstName"
+          required
           value={formData.firstName}
           onChange={handleChange}
           error={errors.firstName}
@@ -83,6 +85,7 @@ function ContactForm() {
           type="text"
           id="lastName"
           name="lastName"
+          required
           value={formData.lastName}
           onChange={handleChange}
           error={errors.lastName}
@@ -92,6 +95,7 @@ function ContactForm() {
           type="email"
           id="email"
           name="email"
+          required
           value={formData.email}
           onChange={handleChange}
           error={errors.email}
@@ -100,6 +104,7 @@ function ContactForm() {
         <RadioGroup
           legend="Query Type"
           name="queryType"
+          required
           options={[
             { value: 'general', label: 'General Enquiry' },
             { value: 'support', label: 'Support Request' },
@@ -112,6 +117,7 @@ function ContactForm() {
           label="Message"
           id="message"
           name="message"
+          required
           value={formData.message}
           onChange={handleChange}
           error={errors.message}
@@ -120,6 +126,7 @@ function ContactForm() {
           label="I consent to being contacted by the team"
           id="consent"
           name="consent"
+          required
           checked={formData.consent}
           onChange={handleChange}
           error={errors.consent}

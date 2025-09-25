@@ -1,8 +1,15 @@
 import { FaAsterisk } from 'react-icons/fa';
 
-function TextareaInput({label, id, name, value, onChange, error}) {
-
-  const errorId = `${id}-error`
+function TextareaInput({
+  label,
+  id,
+  name,
+  value,
+  onChange,
+  error,
+  required = false,
+}) {
+  const errorId = `${id}-error`;
   return (
     <div className="grid space-y-2 sm:col-span-full">
       <label htmlFor={id} className="flex text-base">
@@ -15,6 +22,7 @@ function TextareaInput({label, id, name, value, onChange, error}) {
       </label>
       <textarea
         name={name}
+        required={required}
         value={value}
         id={id}
         onChange={onChange}
