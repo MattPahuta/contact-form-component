@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Input from "./inputs/Input";
 import RadioGroup from "./inputs/RadioGroup";
 import TextareaInput from "./inputs/TextareaInput";
@@ -19,6 +19,15 @@ function ContactForm() {
   const [errors, setErrors] = useState({});
   const [showModal, setShowModal] = useState(false);
 
+  const refs = {
+    firstName: useRef(null),
+    lastName: useRef(null),
+    email: useRef(null),
+    queryType: useRef(null),
+    message: useRef(null),
+    consent: useRef(null),
+  };
+
   function handleChange(e) {
     const { name, value, type, checked } = e.target;
     setFormData((prevData) => ({
@@ -30,6 +39,7 @@ function ContactForm() {
 
   function validate() {
     const newErrors = {};
+
     if (!formData.firstName.trim()) newErrors.firstName = "This field is required";
     if (!formData.lastName.trim()) newErrors.lastName = "This field is required";
     if (!formData.email.trim()) {
@@ -40,18 +50,23 @@ function ContactForm() {
     if (!formData.queryType) newErrors.queryType = "Please select a query type";
     if (!formData.message) newErrors.message = "This field is required";
     if (!formData.consent) newErrors.consent = "To submit this form, please consent to being contacted";
+    
     return newErrors;
   }
 
   function handleSubmit(e) {
     e.preventDefault();
     const newErrors = validate();
+    setErrors(newErrors);
+
     if (Object.keys(newErrors).length > 0) {
-      setErrors(newErrors);
+      const firstInvalidField = Object.keys(newErrors)[0];
+      refs[firstInvalidField]?.current?.focus();
       return;
     }
     console.log("form submitted:", formData);
 
+    setShowModal(true);
     setFormData({
       firstName: "",
       lastName: "",
@@ -61,7 +76,6 @@ function ContactForm() {
       consent: false,
     });
 
-    setShowModal(true);
   }
 
   return (
@@ -71,6 +85,7 @@ function ContactForm() {
         onSubmit={handleSubmit}
         className="grid gap-6 accent-brand-green-600 sm:grid-cols-2">
         <Input
+          inputRef={refs.firstName}
           label="First Name"
           type="text"
           id="firstName"
@@ -82,6 +97,7 @@ function ContactForm() {
           error={errors.firstName}
         />
         <Input
+          inputRef={refs.lastName}
           label="Last Name"
           type="text"
           id="lastName"
@@ -93,6 +109,7 @@ function ContactForm() {
           error={errors.lastName}
         />
         <Input
+          inputRef={refs.email}
           label="Email Address"
           type="email"
           id="email"
@@ -104,6 +121,7 @@ function ContactForm() {
           colSpanFull
         />
         <RadioGroup
+          inputRef={refs.queryType}
           legend="Query Type"
           name="queryType"
           required
@@ -116,6 +134,7 @@ function ContactForm() {
           error={errors.queryType}
         />
         <TextareaInput
+          inputRef={refs.message}
           label="Message"
           id="message"
           name="message"
@@ -125,6 +144,7 @@ function ContactForm() {
           error={errors.message}
         />
         <CheckboxInput
+          inputRef={refs.consent}
           label="I consent to being contacted by the team"
           id="consent"
           name="consent"

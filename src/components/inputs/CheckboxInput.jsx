@@ -1,4 +1,5 @@
 function CheckboxInput({
+  inputRef,
   label,
   id,
   name,
@@ -13,6 +14,7 @@ function CheckboxInput({
   return (
     <div className="grid items-center gap-x-4 gap-y-2 grid-cols-[24px_minmax(100px,_1fr)] sm:col-span-full">
       <input
+        ref={inputRef}
         type="checkbox"
         id={id}
         name={name}

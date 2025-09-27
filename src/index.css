@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
 @import 'tailwindcss';
 
 @theme {
@@ -8,10 +8,20 @@
   --color-brand-green-900: hsl(169, 95%, 16%);
   --color-brand-green-200: hsl(148, 38%, 91%);
   --color-brand-alert: hsl(0, 66%, 54%);
-  --font-karla: "Karla", sans-serif;
+  --font-karla: 'Karla', sans-serif;
   --text-heading: 2rem;
 }
 
 body {
   @apply bg-brand-green-200;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0px 1000px white inset !important; /* Force white background */
+  box-shadow: 0 0 0px 1000px white inset !important;
+  -webkit-text-fill-color: var(--color-brand-grey-900) !important; /* Ensure text color stays consistent */
+  transition: background-color 5000s ease-in-out 0s; /* Prevent "flash" effect */
 }
