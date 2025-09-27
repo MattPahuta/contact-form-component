@@ -76,6 +76,7 @@ function ContactForm() {
           id="firstName"
           name="firstName"
           required
+          autocomplete="given-name"
           value={formData.firstName}
           onChange={handleChange}
           error={errors.firstName}
@@ -86,6 +87,7 @@ function ContactForm() {
           id="lastName"
           name="lastName"
           required
+          autocomplete="family-name"
           value={formData.lastName}
           onChange={handleChange}
           error={errors.lastName}

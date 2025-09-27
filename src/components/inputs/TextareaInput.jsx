@@ -1,5 +1,3 @@
-import { FaAsterisk } from 'react-icons/fa';
-
 function TextareaInput({
   label,
   id,
@@ -12,13 +10,11 @@ function TextareaInput({
   const errorId = `${id}-error`;
   return (
     <div className="grid space-y-2 sm:col-span-full">
-      <label htmlFor={id} className="flex text-base">
+      <label
+        htmlFor={id}
+        className="text-base after:text-brand-green-600 after:text-xl after:content-['*'] after:ml-1">
         {label}
-        <FaAsterisk
-          focusable="false"
-          aria-hidden="true"
-          className="size-1.5 m-1 fill-brand-green-600 inline-block"
-        />
+        <span className="sr-only">required</span>
       </label>
       <textarea
         name={name}

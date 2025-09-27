@@ -8,10 +8,10 @@ function RadioFieldset({legend, id, error, onChange}) {
     <fieldset className="space-y-2 sm:col-span-full">
       <legend className="flex text-base space-y-2" id={id}>
         {legend}
-        <FaAsterisk
+        {/* <FaAsterisk
           focusable="false"
           className="size-1.5 m-1 fill-brand-green-600 inline-block"
-        />
+        /> */}
       </legend>
       <div className="grid gap-4 sm:grid-cols-2">
         <RadioInput

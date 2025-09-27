@@ -1,4 +1,4 @@
-import { FaAsterisk } from 'react-icons/fa';
+import RadioInput from './RadioInput';
 
 function RadioGroup({
   legend,
@@ -13,21 +13,20 @@ function RadioGroup({
 
   return (
     <fieldset className="space-y-2 sm:col-span-full">
-      <legend className="flex text-base space-y-2">
+      <legend className="text-base space-y-2 after:text-brand-green-600 after:text-xl after:content-['*'] after:ml-1">
         {legend}
-        <FaAsterisk
-          focusable="false"
-          className="size-1.5 m-1 fill-brand-green-600 inline-block"
-        />
+        <span className="sr-only">required</span>
       </legend>
       <div className="grid gap-4 sm:grid-cols-2">
         {options.map((option) => (
           <label
             key={option.value}
+            htmlFor={option.value}
             className="flex items-center gap-5 rounded-lg bg-white px-4 py-3.5 cursor-pointer outline-1 -outline-offset-1 outline-brand-grey-500 has-checked:bg-brand-green-200 has-checked:outline-brand-green-600 has-focus:-outline-2 has-focus:-outline-offset-2 has-focus:outline-brand-green-600 has-focus:ring-2 has-focus:ring-brand-green-600/40 hover:outline-2 hover:outline-brand-green-600">
             <input
               type="radio"
               name={name}
+              id={option.value}
               required={required}
               value={option.value}
               checked={value === option.value}
@@ -38,6 +37,17 @@ function RadioGroup({
             />
             {option.label}
           </label>
+          // <RadioInput
+          //   key={option.value}
+          //   name={name}
+          //   label={option.label}
+          //   required={required}
+          //   value={option.value}
+          //   checked={value === option.value}
+          //   onChange={onChange}
+          //   error={error}
+          //   errorId={errorId}
+          // />
         ))}
       </div>
       {error && (

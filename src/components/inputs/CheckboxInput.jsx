@@ -1,5 +1,3 @@
-import { FaAsterisk } from 'react-icons/fa';
-
 function CheckboxInput({
   label,
   id,
@@ -27,13 +25,9 @@ function CheckboxInput({
       />
       <label
         htmlFor={id}
-        className="w-full flex text-base cursor-pointer">
+        className="w-full text-base cursor-pointer after:text-brand-green-600 after:text-xl after:content-['*'] after:ml-1">
         {label}
-        <FaAsterisk
-          focusable="false"
-          aria-hidden="true"
-          className="size-1.5 m-1 fill-brand-green-600 inline-block"
-        />
+        <span className="sr-only">required</span>
       </label>
       {error && (
         <span
