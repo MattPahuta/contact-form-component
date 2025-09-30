@@ -1,5 +1,3 @@
-import RadioInput from './RadioInput';
-
 function RadioGroup({
   inputRef,
   legend,
@@ -23,7 +21,7 @@ function RadioGroup({
           <label
             key={option.value}
             htmlFor={option.value}
-            className="flex items-center gap-5 rounded-lg bg-white px-4 py-3.5 cursor-pointer outline-1 -outline-offset-1 outline-brand-grey-500 has-checked:bg-brand-green-200 has-checked:outline-brand-green-600 has-focus:-outline-2 has-focus:-outline-offset-2 has-focus:outline-brand-green-600 has-focus:ring-2 has-focus:ring-brand-green-600/40 hover:outline-2 hover:outline-brand-green-600">
+            className="flex items-center gap-5 rounded-lg bg-white px-4 py-3.5 cursor-pointer outline-1 -outline-offset-1 outline-brand-grey-500 has-checked:bg-brand-green-200 has-checked:outline-brand-green-600 has-focus:-outline-2 has-focus:-outline-offset-2 has-focus:outline-brand-green-600 has-focus:ring-2 has-focus:ring-brand-green-600/60 hover:outline-2 hover:outline-brand-green-600">
             <input
               ref={index === 0 ? inputRef : null}
               type="radio"
@@ -39,17 +37,6 @@ function RadioGroup({
             />
             {option.label}
           </label>
-          // <RadioInput
-          //   key={option.value}
-          //   name={name}
-          //   label={option.label}
-          //   required={required}
-          //   value={option.value}
-          //   checked={value === option.value}
-          //   onChange={onChange}
-          //   error={error}
-          //   errorId={errorId}
-          // />
         ))}
       </div>
       {error && (

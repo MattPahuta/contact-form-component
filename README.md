@@ -56,6 +56,10 @@ Users should be able to:
 
 ### What I learned
 
+While this is a fairly simple form as forms go, I'm proud of my work here in both matching the design comp and producing versitle component structure that I could make small tweaks to in the future. Afterall, forms are one of the backbones of the web. It was well worthwhile to spend a good deal of time on this project.
+
+This, as Kevin Powell notes in the video linked below, is a deceptively complicated form. In my experience, this was primarily due to the radio input styles and custom error states. This is especially true in a vanilla JavaScript implementation. I used React for my solution, which greatly simplified much of the form's logic while allowing for a good deal of practice with React hooks. The subdued and straightforward design of the form also made choosing Tailwind an easy chocie. 
+
 
 
 The focus styles in the design comp felt a little too subtle to me so I add added a ring effect to make the focused input more obvious. The error prop passed to the component allows for a simple solution to applying error state styles along with the rest of the Tailwind classes.
