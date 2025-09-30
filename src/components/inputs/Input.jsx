@@ -13,11 +13,10 @@ function Input({
   error,
   colSpanFull
 }) {
-
   const errorId = `${id}-error`;
 
   const formGroupClassNames = clsx('grid content-start space-y-2', {
-    'sm:col-span-full': colSpanFull
+    'sm:col-span-full': colSpanFull,
   });
 
   return (
@@ -39,7 +38,7 @@ function Input({
         onChange={onChange}
         aria-invalid={!!error}
         aria-describedby={error ? errorId : undefined}
-        className={`block w-full cursor-pointer rounded-lg bg-white px-4 py-3.5 text-base outline-1 -outline-offset-1 autofill:bg-white focus:-outline-2 focus:-outline-offset-2 focus:outline-brand-green-600 focus:ring-2 focus:ring-brand-green-600/60 hover:outline-2 hover:outline-brand-green-600 ${
+        className={`block w-full cursor-pointer rounded-lg bg-white px-4 py-3.5 text-base autofill:bg-white outline-1 -outline-offset-1 focus:outline-2 focus:-outline-offset-2 focus:outline-brand-green-600 hover:outline-2 hover:outline-brand-green-600 ${
           error ? 'outline-brand-alert' : 'outline-brand-grey-500'
         }`}
       />

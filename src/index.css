@@ -26,11 +26,7 @@ input:-webkit-autofill:active {
   transition: background-color 5000s ease-in-out 0s;
 }
 
-/* input[type="checkbox"]:checked {
-  background-color: var(--color-brand-green-600);
-  border-color: var(--color-brand-green-600);
-} */
-
+/* Handle custom checkbox input styles */
 input[type="checkbox"]::before {
   content: "";
   width: 0.85em;

@@ -3,7 +3,6 @@ import Input from "./inputs/Input";
 import RadioGroup from "./inputs/RadioGroup";
 import TextareaInput from "./inputs/TextareaInput";
 import CheckboxInput from "./inputs/CheckboxInput";
-import CheckboxInput2 from "./inputs/CheckboxInput2";
 import ModalDialog from "./ModalDialog";
 
 function ContactForm() {
@@ -154,18 +153,9 @@ function ContactForm() {
           onChange={handleChange}
           error={errors.consent}
         />
-        <CheckboxInput2
-          label="I consent to being contacted by the team"
-          id="consent"
-          name="consent"
-          required
-          checked={formData.consent}
-          onChange={handleChange}
-          error={errors.consent}
-        />
         <button
           type="submit"
-          className="py-3.5 col-span-full bg-brand-green-600 text-white font-bold rounded-lg cursor-pointer hover:bg-brand-green-900 transition focus-visible:bg-brand-green-900 focus-visible:outline-2 focus-visible:outline-brand-green-600/60 focus-visible:outline-offset-2">
+          className="py-3.5 col-span-full bg-brand-green-600 text-white font-bold rounded-lg shadow-xs cursor-pointer hover:bg-brand-green-900 transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-green-900 focus-visible:bg-brand-green-900 ">
           Submit
         </button>
       </form>

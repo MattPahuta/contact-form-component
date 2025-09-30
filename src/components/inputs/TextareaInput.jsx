@@ -26,7 +26,7 @@ function TextareaInput({
         onChange={onChange}
         aria-invalid={!!error}
         aria-describedby={error ? errorId : undefined}
-        className={`block cursor-pointer box-content h-[3lh] resize-y rounded-lg bg-white px-4 py-3.5 text-base sm:text-lg outline-1 -outline-offset-1 autofill:bg-white focus:-outline-2 focus:-outline-offset-2 hover:outline-2 hover:outline-brand-green-600 focus:outline-brand-green-600 focus:ring-2 focus:ring-brand-green-600/60  ${
+        className={`block cursor-pointer box-content h-[3lh] resize-y rounded-lg bg-white px-4 py-3.5 text-base sm:text-lg outline-1 -outline-offset-1 autofill:bg-white focus:outline-2 focus:-outline-offset-2 hover:outline-2 hover:outline-brand-green-600 focus:outline-brand-green-600 ${
           error ? 'outline-brand-alert' : 'outline-brand-grey-500'
         }`}></textarea>
       {error && (
