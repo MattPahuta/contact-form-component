@@ -14,7 +14,6 @@ This is a solution to the [Contact form challenge on Frontend Mentor](https://ww
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
 ## Overview
 
@@ -46,8 +45,6 @@ Users should be able to:
 
 - Semantic HTML5 markup
 - Accessible design
-- Flexbox
-- CSS Grid
 - Mobile-first workflow
 - [Tailwindcss](https://tailwindcss.com/) - CSS framework
 - [Vite](https://vite.dev/) - Frontend build tool
@@ -98,9 +95,3 @@ Use this section to outline areas that you want to continue focusing on in futur
 - Frontend Mentor - [@mattpahuta](https://www.frontendmentor.io/profile/MattPahuta)
 - Bluesky - [@mattpahuta](https://bsky.app/profile/mattpahuta.bsky.social)
 - LinkedIn - [Matt Pahuta](www.linkedin.com/in/mattpahuta)
-
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-

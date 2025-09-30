@@ -56,6 +56,7 @@ function ContactForm() {
 
   function handleSubmit(e) {
     e.preventDefault();
+
     const newErrors = validate();
     setErrors(newErrors);
 
@@ -66,7 +67,8 @@ function ContactForm() {
     }
     console.log("form submitted:", formData);
 
-    setShowModal(true);
+    e.target.reset();
+    
     setFormData({
       firstName: "",
       lastName: "",
@@ -75,7 +77,8 @@ function ContactForm() {
       message: "",
       consent: false,
     });
-
+    
+    setShowModal(true);
   }
 
   return (
@@ -155,7 +158,7 @@ function ContactForm() {
         />
         <button
           type="submit"
-          className="py-3.5 col-span-full bg-brand-green-600 text-white font-bold rounded-lg shadow-xs cursor-pointer hover:bg-brand-green-900 transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-green-900 focus-visible:bg-brand-green-900 ">
+          className="py-4 col-span-full bg-brand-green-600 text-white text-lg font-bold rounded-lg shadow-xs cursor-pointer hover:bg-brand-green-900 transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-green-900 focus-visible:bg-brand-green-900 ">
           Submit
         </button>
       </form>

@@ -11,10 +11,10 @@ function CheckboxInput({
   const errorId = `${id}-error`;
 
   return (
-    <div className="sm:col-span-full">
+    <div className="py-4 sm:col-span-full">
       <label
         htmlFor={id}
-        className="text-base leading-1 cursor-pointer grid items-center grid-cols-[1em_auto] gap-5">
+        className="text-base cursor-pointer grid items-center grid-cols-[1em_auto] gap-5">
         <input
           ref={inputRef}
           type="checkbox"
