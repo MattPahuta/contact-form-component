@@ -53,26 +53,80 @@ Users should be able to:
 
 ### What I learned
 
-While this is a fairly simple form as forms go, I'm proud of my work here in both matching the design comp and producing versitle component structure that I could make small tweaks to in the future. Afterall, forms are one of the backbones of the web. It was well worthwhile to spend a good deal of time on this project.
+While this is a fairly simple form as forms go, I'm proud of my work here, both in matching the design comp and producing a versatile component structure that I can make small tweaks to in the future. After all, forms are one of the backbones of the web. It seemed well worthwhile to spend a lot of extra time on this project.
 
-This, as Kevin Powell notes in the video linked below, is a deceptively complicated form. In my experience, this was primarily due to the radio input styles and custom error states. This is especially true in a vanilla JavaScript implementation. I used React for my solution, which greatly simplified much of the form's logic while allowing for a good deal of practice with React hooks. The subdued and straightforward design of the form also made choosing Tailwind an easy chocie. 
+This, as Kevin Powell notes in the video linked below, is a deceptively complicated form. In my experience, this was primarily due to the radio input styles and custom error states. This is especially true in a vanilla JavaScript implementation. I used React for my solution, which greatly simplified much of the form's logic while allowing for a good deal of practice with React hooks. The subdued and straightforward design of the form also made Tailwind an easy choice.  
 
-
-
-The focus styles in the design comp felt a little too subtle to me so I add added a ring effect to make the focused input more obvious. The error prop passed to the component allows for a simple solution to applying error state styles along with the rest of the Tailwind classes.
+For the form inputs,
 
 ```js
-  <input
-    id={name}
-    name={name}
-    required={required}
-    type={type}
-    value={value}
-    onChange={onChange}
-    aria-invalid={!!error}
-    aria-describedby={error ? errorId : undefined}
-    className={`block w-full cursor-pointer rounded-lg bg-white px-4 py-3.5 text-base outline-1 -outline-offset-1 focus:-outline-2 focus:-outline-offset-2 focus:outline-brand-green-600 focus:ring-2 focus:ring-brand-green-600/40 hover:outline-2 hover:outline-brand-green-600 ${error ? "outline-brand-alert" : "outline-brand-grey-500" }`}
-  />
+    <div className={formGroupClassNames}>
+      <label
+        htmlFor={name}
+        className="text-base after:text-brand-green-600 after:content-['*'] after:ml-1 after:text-xl">
+        {label}
+        <span className="sr-only">required</span>
+      </label>
+      <input
+        ref={inputRef}
+        id={name}
+        name={name}
+        autoComplete={autocomplete}
+        required={required}
+        type={type}
+        value={value}
+        onChange={onChange}
+        aria-invalid={!!error}
+        aria-describedby={error ? errorId : undefined}
+        className={`block w-full cursor-pointer rounded-lg bg-white px-4 py-3.5 text-base autofill:bg-white outline-1 -outline-offset-1 focus:outline-2 focus:-outline-offset-2 focus:outline-brand-green-600 hover:outline-2 hover:outline-brand-green-600 ${
+          error ? 'outline-brand-alert' : 'outline-brand-grey-500'
+        }`}
+      />
+      {error && (
+        <span
+          id={errorId}
+          className="text-brand-alert col-span-full"
+          aria-live="polite">
+          {error}
+        </span>
+      )}
+    </div>
+```
+
+A few things going on here in the main form submit handler. We call the validate function to handle real-time errors in the form, preventing any submission until all the fields are valid. Since the form isn't wired up to anything on the backend, I left this one last console log to validate the final information. 
+
+Additionally, since autofill styles tend to persist after form submission (particullaly with a pw manager like 1Password) I added a key in state for the form, updating it as the last step to force a mount of a fresh form.
+
+I'm sure there are more robust enterprise solutions for that sort of thing, but this seemed thed simplest path for demo purposes.
+
+```js
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    const newErrors = validate();
+    setErrors(newErrors);
+
+    if (Object.keys(newErrors).length > 0) {
+      const firstInvalidField = Object.keys(newErrors)[0];
+      refs[firstInvalidField]?.current?.focus();
+      return;
+    }
+    console.log("form submitted:", formData);
+
+    e.target.reset();
+    
+    setFormData({
+      firstName: "",
+      lastName: "",
+      email: "",
+      queryType: "",
+      message: "",
+      consent: false,
+    });
+    
+    setShowModal(true);
+    setFormKey((prev) => prev + 1);
+  }
 ```
 
 ### Continued development

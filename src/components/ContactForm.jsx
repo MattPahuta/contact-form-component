@@ -18,6 +18,7 @@ function ContactForm() {
 
   const [errors, setErrors] = useState({});
   const [showModal, setShowModal] = useState(false);
+  const [formKey, setFormKey] = useState(0);
 
   const refs = {
     firstName: useRef(null),
@@ -79,11 +80,13 @@ function ContactForm() {
     });
     
     setShowModal(true);
+    setFormKey((prev) => prev + 1);
   }
 
   return (
     <>
       <form
+        key={formKey}
         noValidate
         onSubmit={handleSubmit}
         className="grid gap-6 accent-brand-green-600 sm:grid-cols-2">

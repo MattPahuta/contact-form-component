@@ -1,7 +1,5 @@
 import { useEffect, useRef } from 'react';
 
-// m-auto w-auto h-fit
-
 function ModalDialog({ onClose }) {
   const dialogRef = useRef(null);
 

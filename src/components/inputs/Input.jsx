@@ -15,7 +15,7 @@ function Input({
 }) {
   const errorId = `${id}-error`;
 
-  const formGroupClassNames = clsx('grid content-start space-y-2', {
+  const formGroupClassNames = clsx('grid auto-rows-min space-y-2', {
     'sm:col-span-full': colSpanFull,
   });
 
