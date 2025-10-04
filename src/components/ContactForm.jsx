@@ -94,7 +94,6 @@ function ContactForm() {
           inputRef={refs.firstName}
           label="First Name"
           type="text"
-          id="firstName"
           name="firstName"
           required
           autocomplete="given-name"
@@ -106,7 +105,6 @@ function ContactForm() {
           inputRef={refs.lastName}
           label="Last Name"
           type="text"
-          id="lastName"
           name="lastName"
           required
           autocomplete="family-name"
@@ -118,7 +116,6 @@ function ContactForm() {
           inputRef={refs.email}
           label="Email Address"
           type="email"
-          id="email"
           name="email"
           required
           value={formData.email}
@@ -142,7 +139,6 @@ function ContactForm() {
         <TextareaInput
           inputRef={refs.message}
           label="Message"
-          id="message"
           name="message"
           required
           value={formData.message}
@@ -152,7 +148,6 @@ function ContactForm() {
         <CheckboxInput
           inputRef={refs.consent}
           label="I consent to being contacted by the team"
-          id="consent"
           name="consent"
           required
           checked={formData.consent}

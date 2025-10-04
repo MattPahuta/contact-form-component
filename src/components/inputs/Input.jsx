@@ -1,10 +1,10 @@
-import { clsx } from 'clsx';
+import { useId } from "react";
+import { clsx } from "clsx";
 
 function Input({
   inputRef,
   label,
   type,
-  id,
   name,
   autocomplete = "off",
   required = false,
@@ -13,7 +13,9 @@ function Input({
   error,
   colSpanFull
 }) {
-  const errorId = `${id}-error`;
+
+  const inputId = useId();
+  const errorId = `${inputId}-error`;
 
   const formGroupClassNames = clsx('grid auto-rows-min space-y-2', {
     'sm:col-span-full': colSpanFull,
@@ -22,14 +24,14 @@ function Input({
   return (
     <div className={formGroupClassNames}>
       <label
-        htmlFor={name}
+        htmlFor={inputId}
         className="text-base after:text-brand-green-600 after:content-['*'] after:ml-1 after:text-xl">
         {label}
         <span className="sr-only">required</span>
       </label>
       <input
         ref={inputRef}
-        id={name}
+        id={inputId}
         name={name}
         autoComplete={autocomplete}
         required={required}
