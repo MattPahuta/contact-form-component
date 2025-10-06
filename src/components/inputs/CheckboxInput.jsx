@@ -1,27 +1,25 @@
-import { useId } from 'react';
-
 function CheckboxInput({
   inputRef,
   label,
   name,
+  id,
   checked,
   onChange,
   required = false,
   error,
 }) {
 
-  const inputId = useId();
-  const errorId = `${inputId}-error`;
+  const errorId = `${id}-error`;
 
   return (
     <div className="py-4 space-y-2 sm:col-span-full">
       <label
-        htmlFor={inputId}
+        htmlFor={id}
         className="text-base cursor-pointer grid items-center grid-cols-[1em_auto] gap-5">
         <input
           ref={inputRef}
           type="checkbox"
-          id={inputId}
+          id={id}
           name={name}
           required={required}
           checked={checked}

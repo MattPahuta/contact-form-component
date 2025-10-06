@@ -95,8 +95,9 @@ function ContactForm() {
           label="First Name"
           type="text"
           name="firstName"
+          id="firstNameInput"
           required
-          autocomplete="given-name"
+          autoComplete="given-name"
           value={formData.firstName}
           onChange={handleChange}
           error={errors.firstName}
@@ -106,8 +107,9 @@ function ContactForm() {
           label="Last Name"
           type="text"
           name="lastName"
+          id="lastNameInput"
           required
-          autocomplete="family-name"
+          autoComplete="family-name"
           value={formData.lastName}
           onChange={handleChange}
           error={errors.lastName}
@@ -117,6 +119,7 @@ function ContactForm() {
           label="Email Address"
           type="email"
           name="email"
+          id="emailInput"
           required
           value={formData.email}
           onChange={handleChange}
@@ -140,6 +143,7 @@ function ContactForm() {
           inputRef={refs.message}
           label="Message"
           name="message"
+          id="messageText"
           required
           value={formData.message}
           onChange={handleChange}
@@ -149,6 +153,7 @@ function ContactForm() {
           inputRef={refs.consent}
           label="I consent to being contacted by the team"
           name="consent"
+          id="consentInput"
           required
           checked={formData.consent}
           onChange={handleChange}

@@ -8,6 +8,8 @@ function ModalDialog({ onClose }) {
       dialogRef.current.showModal();
     }
 
+    dialogRef.current?.focus();
+
     const handleClose = () => {
       onClose();
     };
@@ -24,7 +26,7 @@ function ModalDialog({ onClose }) {
   return (
     <dialog
       ref={dialogRef}
-      className="animate-in fade-in zoom-in backdrop:animate-in backdrop:fade-in mx-auto my-6 w-auto h-fit max-w-md p-0 rounded-lg shadow-lg backdrop:bg-black/50 backdrop:backdrop-blur-sm backdrop:duration-300 starting:scale-95 backdrop:starting:opacity-0">
+      className="animate-in fade-in zoom-in backdrop:animate-in backdrop:fade-in mx-auto my-6 w-auto h-fit max-w-md p-0 rounded-lg shadow-lg backdrop:bg-black/50 backdrop:backdrop-blur-sm backdrop:duration-300 starting:scale-95 backdrop:starting:opacity-0 focus:outline-0">
       <div className="flex flex-col py-6 px-5 bg-brand-grey-900 text-white">
         <header className="flex items-center justify-between mb-4">
           <h2 className="flex items-center text-lg font-semibold leading-none">
@@ -44,7 +46,9 @@ function ModalDialog({ onClose }) {
             </svg>
             Message Sent!
           </h2>
-          <button onClick={onClose} className="flex h-6 w-6 justify-center rounded-md cursor-pointer text-brand-green-200 hover:bg-brand-green-200 hover:text-brand-grey-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-green-200" autoFocus>
+          <button
+            onClick={onClose}
+            className="flex h-6 w-6 justify-center rounded-md cursor-pointer text-brand-green-200 hover:bg-brand-green-200 hover:text-brand-grey-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-green-200">
             <span className="text-xl leading-none" aria-hidden="true">
               x
             </span>
@@ -53,7 +57,8 @@ function ModalDialog({ onClose }) {
         </header>
         <main className="text-brand-green-200">
           <p>
-            Thanks for completing the form. We'll be in touch soon!
+            Thanks for completing the form. We&apos;ll be in touch
+            soon!
           </p>
         </main>
       </div>

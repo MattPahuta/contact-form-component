@@ -1,22 +1,20 @@
-import { useId } from 'react';
-
 function TextareaInput({
   inputRef,
   label,
   name,
+  id,
   value,
   onChange,
   error,
   required = false,
 }) {
 
-  const inputId = useId();
-  const errorId = `${inputId}-error`;
+  const errorId = `${id}-error`;
 
   return (
     <div className="grid space-y-2 sm:col-span-full">
       <label
-        htmlFor={inputId}
+        htmlFor={id}
         className="text-base after:text-brand-green-600 after:text-xl after:content-['*'] after:ml-1">
         {label}
         <span className="sr-only">required</span>
@@ -26,7 +24,7 @@ function TextareaInput({
         name={name}
         required={required}
         value={value}
-        id={inputId}
+        id={id}
         onChange={onChange}
         aria-invalid={!!error}
         aria-describedby={error ? errorId : undefined}
