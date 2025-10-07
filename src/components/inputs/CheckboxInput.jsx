@@ -14,13 +14,12 @@ function CheckboxInput({
   return (
     <div className="py-4 space-y-2 sm:col-span-full">
       <label
-        htmlFor={id}
         className="text-base cursor-pointer grid items-center grid-cols-[1em_auto] gap-5">
         <input
           ref={inputRef}
           type="checkbox"
-          id={id}
           name={name}
+          id="consentInput"
           required={required}
           checked={checked}
           onChange={onChange}
